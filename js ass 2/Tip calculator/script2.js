@@ -1,18 +1,15 @@
-querySelector('#tip-form').onchange = function(){
+const tipcalcy= ()=>{
+  let amount = document.getElementById("bill_amt").value;
 
-    var bill = Number(document.getElementById('billTotal').value);document
-    var tip = document.getElementById('tipInput').value;
-    document.getElementById('tipOutput').innerHTML = `${tip}%`;
-    var tipValue = bill * (tip/100)
-    var finalBill = bill + tipValue
-  console.log(finalBill)
-  var tipAmount = document.querySelector('#tipAmount')
-  var totalBillWithTip = document.querySelector('#totalBillWithTip')
-  
-  tipAmount.value = tipValue.toFixed(2);
-   totalBillWithTip.value =finalBill.toFixed(2);
-  
-   //Show Results
-  
-    document.getElementById('results').style.display='block'
-  }
+  let perc = document.getElementById("tip_perc").value;
+
+  let tip = amount *(perc/100);
+
+  let total = tip+Number(amount);
+
+  document.getElementById("tip_total").value = tip;
+
+document.getElementById("total_bill").value=total;
+
+
+}
